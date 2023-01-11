@@ -1,24 +1,42 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-
-char *_strdup(char *str);
-
 /**
- * main - check the code .
+ * _strdup - returns a pointer to a newly allocated
+ * space in memory which contains a copy of the string
+ * passed.
+ * @str: pointer to string being duplicated.
  *
- * Return: Always 0.
+ * Return: NULL if str is NULL.
+ * pointer to duplicated string on success.
+ * NULL if memory was insufficient.
  */
-int main(void)
+char *_strdup(char *str)
 {
-	char *s;
+        char *nstr;
+        unsigned int len, i;
 
-	s = _strdup("Best School!");
-	if (s == NULL)
-	{
-		printf("failed to allocate memory\n");
-		return (1);
-	}
-	printf("%s\n", s);
-	free(s);
-	return (0);
+        /* check is str null */
+        if (str == NULL)
+        {
+                return (NULL);
+        }
+
+        len = 0;
+        while (str[len] != '\0')
+        {
+                len++;
+        }
+        nstr = malloc(sizeof(char) * (len + 1));
+
+        /*check if malloc was successful*/
+        if (nstr == NULL)
+        {
+                return (NULL);
+        }
+        for (i = 0; i < len; i++)
+        {
+                nstr[i] = str[i];
+        }
+        nstr[len] = '\0';
+        return (nstr);
 }
