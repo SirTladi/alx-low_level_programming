@@ -6,7 +6,7 @@
  * @string: string
  * Return: string length
  */
-int _strlrn(char *string)
+int _strlen(char *string)
 {
 	int i;
 
