@@ -29,7 +29,10 @@ flag = 0;
  * @str: string to split
  *
  * Return: pointer to an array of strings (success)
- * or NULL (error)
+ * @str: string to split
+ *
+ * Return: pointer to an array of strings (success)
+ * or NULL (Error)
  */
 char **strtow(char *str)
 {
