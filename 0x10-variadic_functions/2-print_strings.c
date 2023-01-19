@@ -10,14 +10,14 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
-	unsigned  int i;
+	unsigned int i;
 	char *s;
 	va_list strings;
 
 	if (separator == NULL)
 		separator = "";
 
-	va start(strings, n);
+	va_start(strings, n);
 
 	for (i = 0; i < n; i++)
 	{
